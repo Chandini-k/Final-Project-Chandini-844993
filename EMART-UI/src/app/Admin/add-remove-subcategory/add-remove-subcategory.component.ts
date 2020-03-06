@@ -1,0 +1,78 @@
+import { Component, OnInit } from '@angular/core';
+import { Subcategory } from 'src/app/Models/subcategory';
+import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-add-remove-subcategory',
+  templateUrl: './add-remove-subcategory.component.html',
+  styleUrls: ['./add-remove-subcategory.component.css']
+})
+export class AddRemoveSubcategoryComponent implements OnInit {
+list:Subcategory[]=[];
+subcategory:Subcategory;
+submitted=false;
+subcategoryForm:FormGroup;
+
+  constructor(private frombuilder:FormBuilder,private service:UserService,private route:Router) {
+    this.service.GetAllSubCategories().subscribe(res=>{
+      this.list=res;
+      console.log(this.list);
+    },err=>{
+      console.log(err)
+    })
+   }
+
+
+  ngOnInit() {
+    this.subcategoryForm=this.frombuilder.group({
+      subname:['',Validators.required],
+      subid:['',Validators.required],
+      cname:['',Validators.required],
+      cid:['',Validators.required],
+      sdetails:['',Validators.required],
+      gst:['',Validators.required]
+    });
+
+  }
+  onSubmitAdd(){
+    this.submitted=true;
+    if(this.subcategoryForm.invalid){
+     return;
+    }
+      else{
+        this.subcategory=new Subcategory();
+      this.subcategory.subid=Math.floor(Math.random()*1000);
+      this.subcategory.subid=this.subcategoryForm.value["subid"];
+      this.subcategory.subname=this.subcategoryForm.value["subname"];
+      this.subcategory.cname=this.subcategoryForm.value["cname"];
+      this.subcategory.sdetails=this.subcategoryForm.value["sdetails"];
+      this.subcategory.cid=Number(this.subcategoryForm.value["cid"]);
+      this.subcategory.gst=Number(this.subcategoryForm.value["gst"]);
+      this.list.push(this.subcategory)
+      console.log(this.subcategory);
+    this.service.AddSubCategory(this.subcategory).subscribe(res=>
+      {
+        this.route.navigateByUrl('ADMIN')
+      },err=>{
+        console.log(err)
+      })
+      }
+    }
+    Delete(subid:number){
+      this.service.DeleteSubCategory(subid).subscribe(res=>{
+        console.log('Record deleted');
+        this.route.navigateByUrl('ADMIN')
+      },
+      err=>{
+        console.log(err);
+      })
+    }   
+     get f(){return this.subcategoryForm.controls;}
+    onReset()
+    {
+      this.submitted=false;
+      this.subcategoryForm.reset();
+    }
+}

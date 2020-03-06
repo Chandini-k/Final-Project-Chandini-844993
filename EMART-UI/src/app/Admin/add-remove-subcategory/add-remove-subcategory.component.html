@@ -1,0 +1,59 @@
+    <div class="register" align="center">
+        <h3 align="center">ADD ITEM</h3>
+            <form [formGroup]="subcategoryForm" align="center">
+                <table>
+                    <tr>
+                        <td><label>SubCategory Name</label></td>
+                        <td><input type="text" formControlName="subname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subname.errors }" />
+                        <div *ngIf="submitted && f.subname.errors" class="invalid-feedback">
+                            <div *ngIf="f.subname.errors.required"></div>
+                            <div *ngIf="f.subname.errors.pattern"></div>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td><label>Category Name</label></td>
+                        <td><input type="text" formControlName="cname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cname.errors }" />
+                        <div *ngIf="submitted && f.cname.errors" class="invalid-feedback">
+                            <div *ngIf="f.cname.errors.required"></div>
+                            <div *ngIf="f.cname.errors.pattern"></div>
+                        </div></td>
+                    </tr>
+                        <tr><td><label>SubCategory Details</label></td>
+                    <td><input type="text" formControlName="sdetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sdetails.errors }" />
+                    <div *ngIf="submitted && f.sdetails.errors" class="invalid-feedback">
+                        <div *ngIf="f.sdetails.errors.required"></div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><label>GST</label></td>
+                    <td><input type="text" formControlName="gst" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gst.errors }" />
+                    <div *ngIf="submitted && f.gst.errors" class="invalid-feedback">
+                        <div *ngIf="f.gst.errors.required"></div>
+                    </div></td>
+                </tr>
+                    <div class="text-center form-group">
+                    <button class="btn btn-primary mr-1" type="submit" (click)="onSubmitAdd()">Add</button>
+                </div>
+            </table>
+            </form>
+    </div>    
+    <div class="tableform">     
+        <table class="table table-bordered" align="center">
+            <tr>
+                <th>SubCategory Id</th>
+                <th>SubCategoryname</th>
+                <th>CategoryName</th>
+                <th>Details</th>
+                <th>GST</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let subcategory of list">
+               <td>{{subcategory.subid}}</td>
+               <td>{{subcategory.subname}}</td>
+               <td>{{subcategory.cname}}</td>
+               <td>{{subcategory.sdetails}}</td>
+               <td>{{subcategory.gst}}</td>
+               <td><button class="btn btn-primary mr-1" type="button" (click)="Delete(subcategory.subid)">Delete</button></td>
+            </tr>
+        </table>
+</div> 

@@ -1,0 +1,123 @@
+<!-- <div class="card m-1" style="width:100%;align-items: center;">
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>Item Id</th>
+            <th>Category Id</th>
+            <th>SubCatergory Id</th>
+            <th>Price</th>
+            <th>ItemName</th>
+            <th>Description</th>
+            <th>Stockno</th>
+            <th>Remarks</th>
+            <th>Seller Id</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let item of list">
+           <td>{{item.id}}</td>
+           <td>{{item.categoryid}}</td>
+           <td>{{item.subcatergoryid}}</td>
+           <td>{{item.price}}</td>
+           <td>{{item.itemname}}</td>
+           <td>{{item.description}}</td>
+           <td>{{item.stockno}}</td>
+           <td>{{item.remarks}}</td>
+           <td>{{item.sid}}</td>
+           <td><button type="button" class="btn btn-primary mr-1" data-toggle="modal" data-target="#exampleModal">
+            Edit
+          </button></td>
+          <td><button class="btn btn-primary mr-1" type="button" (click)="Delete(item.id)">Delete</button></td>
+        </tr>
+    </table>
+</div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form *ngFor="let item of list">
+          <div class="form-group">
+            <label for="Itemname" class="col-form-label">ItemName</label>
+            <input type="text" class="form-control" id="Itemname" value="{{item.itemname}}"/>
+          </div>
+          <div class="form-group">
+            <label >Price</label>
+            <input type="text" class="form-control" id="price" value="{{item.price}}"/>
+          </div>
+          <div class="form-group">
+            <label>Stock Number</label>
+            <input type="number" class="form-control" id="message-text" value="{{item.stockno}}"/>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Description</label>
+            <textarea class="form-control" id="message-text" value="{{item.description}}"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="Update()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row" >
+    <div class="col-md-3" *ngFor="let item of list">
+    <div class="card" style="width:250px">
+      <img class="img" src="assets/images/{{item.imagename}}" alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">{{item.itemname}}</h4>
+        <h5 class="card-text">ID:{{item.id}}
+           Price:{{item.price}} </h5>
+        <button  type="button" (click)="view(item.id)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
+        <button  type="button" (click)="Delete(item.id)" class="btn btn-danger">Del</button>
+        <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+      </div>
+    </div>
+  </div>
+    </div>
+   </div>
+   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Edit</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form *ngFor="let item of list">
+            <div class="form-group">
+              <label for="Itemname" class="col-form-label">ItemName</label>
+              <input type="text" class="form-control" id="Itemname" value="{{item.itemname}}"/>
+            </div>
+            <div class="form-group">
+              <label >Price</label>
+              <input type="text" class="form-control" id="price" value="{{item.price}}"/>
+            </div>
+            <div class="form-group">
+              <label>Stock Number</label>
+              <input type="number" class="form-control" id="message-text" value="{{item.stockno}}"/>
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Description</label>
+              <textarea class="form-control" id="message-text" value="{{item.description}}"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="Edit()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
