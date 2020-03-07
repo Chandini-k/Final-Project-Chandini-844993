@@ -1,60 +1,7 @@
-<!-- <div class="card m-1" style="width:500px;align-items: center;">
-    <div class="card-body">
-        <form [formGroup]="searchform">
-  
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" formControlName="itemname" class="form-control" />
-                  </div>
-                <div class="form-group">
-                  <label>Price</label>
-                  <input type="text" formControlName="price" class="form-control" />
-              </div>
-            <div class="text-center form-group">
-                <button class="btn btn-primary mr-1" (click)="Search()" type="button">Search</button>
-            </div>
-            <div class="text-center form-group">
-              <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
-          </div>
-        </form>
-    </div>
-  </div>
-  <div class="container">
-      <table class="table table-bordered">
-          <tr>
-              <th>itemname</th>
-              <th>Price</th>
-          </tr>
-          <tr *ngFor="let item of list">
-             <td>{{item.itemname}}</td>
-             <td>{{item.price}}</td>
-          </tr>
-      </table>
-  </div> -->
-  <!-- <form id="g" [formGroup]="searchform" >
-    <div class="box">
-        <input type="search" id="search" formControlName="itemname" placeholder="Search" />
-    <button type="button" (click)="Search()" >search</button>
-  </div>
-  </form> -->
-  <!-- <section  class="box1" style="align-content: center;">
-    <table class="box" style="background-color:black;">
-        <tr *ngFor="let item of list">
-            <th>{{item.itemname}}</th>
-        </tr>
-        <tr *ngFor="let item of list">
-            <td><img src="assets/images/logo.jpg"><br><br>
-         Price: {{item.price}}<br>
-          Name: {{item.itemname}}<br>
-          Stock : {{item.stockno}}</td>
-        </tr>
-    </table>
-  </section> -->
   <form [formGroup]="itemform">
     <input type="search" formControlName="itemname" placeholder="Search" aria-label="Search">
     <button type="button" class="btn btn-light" (click)="Search()">Search</button>
 </form>
-
 <div class="container">
 <div class="row" >
   <div class="col-md-3" *ngFor="let item of list">
@@ -64,9 +11,9 @@
       <h4 class="card-title">{{item.itemname}}</h4>
       <h5 class="card-text">ID:{{item.id}}
          Price:{{item.price}} </h5>
-      <button id="b1" type="button" (click)="Buy()" class="btn btn-primary" >BuyItem</button>
+      <button type="button" (click)="Buy(item)" class="btn btn-primary" >BuyItem</button>
  
-      <button id="b2" type="button" (click)="Delete(item.itemid)" class="btn btn-primary">AddToCart</button>
+      <button type="button" (click)="AddtoCart(item)" class="btn btn-primary">AddToCart</button>
      
     <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
     </div>

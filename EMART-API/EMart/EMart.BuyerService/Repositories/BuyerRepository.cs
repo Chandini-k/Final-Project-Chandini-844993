@@ -13,9 +13,9 @@ namespace EMart.BuyerService.Repositories
         {
             _context = context;
         }
-        public void BuyItem(PurchaseHistory purchasehistory)
+        public void BuyItem(PurchaseHistory item)
         {
-            _context.PurchaseHistory.Add(purchasehistory);
+            _context.Add(item);
             _context.SaveChanges();
         }
 
@@ -51,6 +51,25 @@ namespace EMart.BuyerService.Repositories
         public List<Items> ViewItem(string name)
         {
             return _context.Items.Where(e => e.Itemname == name).ToList();
+        }
+        public void AddtoCart(Cart cart)
+        {
+            _context.Add(cart);
+            _context.SaveChanges();
+        }
+        public void DeleteCartItem(int itemid)
+        {
+            Cart cart = _context.Cart.Find(itemid);
+            _context.Cart.Remove(cart);
+            _context.SaveChanges();
+        }
+        public List<Cart> GetCartItems()
+        {
+            return _context.Cart.ToList();
+        }
+        public List<PurchaseHistory> ViewOrders()
+        {
+            return _context.PurchaseHistory.ToList();
         }
     }
 }

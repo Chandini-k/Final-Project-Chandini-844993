@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 import { Seller } from 'src/app/Models/seller';
-import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { Items } from 'src/app/Models/items';
+import { SellerService } from 'src/app/services/seller.service';
 @Component({
   selector: 'app-viewprofile',
   templateUrl: './viewprofile.component.html',
@@ -14,7 +14,7 @@ export class ViewprofileComponent implements OnInit {
 form:FormGroup;
 id:number;
 item:Items;
-    constructor(private frombuilder:FormBuilder,private service:UserService) {
+    constructor(private frombuilder:FormBuilder,private service:SellerService,private route:Router) {
       this.id=JSON.parse(localStorage.getItem('Sid')) ;
      }
   
@@ -72,6 +72,10 @@ item:Items;
       this.service.EditProfile(this.seller).subscribe(res=>{console.log(this.seller),alert("updated succesfully"),this.sellerprofile()},err=>{
         console.log(err)
       })
+    }
+    Logout(){
+      //localStorage.clear();
+      this.route.navigateByUrl('HOME');
     }
 }
 

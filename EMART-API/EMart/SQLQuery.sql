@@ -18,6 +18,7 @@ website varchar(20),
 email varchar(20) not null,
 mobileno varchar(20) not null)
 select * from Seller
+delete Seller where sid=3
 create table Category(cid int primary key,
 cname varchar(20) not null,
 cdetails varchar(20))
@@ -71,6 +72,7 @@ noofitems int,
 datetime date not null,
 remarks varchar(20))
 select * from Purchase_history
+delete Purchase_history where id=103
 ALTER TABLE Purchase_history ADD transactionstatus varchar(20)
 create table Users(uname varchar(20) not null,
 pwd varchar(20) not null)
@@ -84,4 +86,16 @@ description varchar(20))
 select * from Discounts
 alter table Items add sid int foreign key references Seller(sid)
 select * from Items
-
+create table Cart(id int primary key,
+categoryid int foreign key references Category(cid),
+subcatergoryid int foreign key references SubCategory(subid),
+sid int foreign key references Seller(sid),
+bid int foreign key references Buyer(bid),
+itemid int foreign key references Items(id),
+price varchar(20) not null,
+itemname varchar(20) not null,
+description varchar(20),
+stockno int,
+remarks varchar(20),
+imagename varchar(20))
+select * from Cart

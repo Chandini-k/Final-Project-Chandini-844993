@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup} from '@angular/forms';
 import { Items } from 'src/app/Models/items';
-import { UserService } from 'src/app/services/user.service';
 import { Seller } from 'src/app/Models/seller';
 import { Router } from '@angular/router';
+import { SellerService } from 'src/app/services/seller.service';
 @Component({
   selector: 'app-viewitems',
   templateUrl: './viewitems.component.html',
@@ -16,8 +16,8 @@ export class ViewitemsComponent implements OnInit {
   item:Items;
   seller:Seller;
   list1:Items
-  constructor(private builder:FormBuilder,private service:UserService,private route:Router) {
-    let id=Number(localStorage.getItem('id'))
+  constructor(private builder:FormBuilder,private service:SellerService,private route:Router) {
+    let id=Number(localStorage.getItem('Sid'))
     this.service.ViewItems(id).subscribe(res=>{
       this.list=res;
       console.log(this.list);
@@ -77,5 +77,9 @@ export class ViewitemsComponent implements OnInit {
           description:this.item.description
         })
       })
+    }
+    Logout(){
+     // localStorage.clear();
+      this.route.navigateByUrl('HOME');
     }
 }

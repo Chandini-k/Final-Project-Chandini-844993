@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-block-or-unblock-seller',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlockOrUnblockSellerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit() {
   }
-
+  Logout(){
+    //localStorage.clear();
+    this.route.navigateByUrl('HOME');
+  }
 }

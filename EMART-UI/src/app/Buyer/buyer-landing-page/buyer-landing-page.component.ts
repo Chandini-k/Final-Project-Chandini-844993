@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Items } from 'src/app/Models/items';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { BuyerService } from 'src/app/services/buyer.service';
 
 @Component({
   selector: 'app-buyer-landing-page',
@@ -15,7 +15,7 @@ export class BuyerLandingPageComponent implements OnInit {
   list1:Items[];
   submitted=false;
   searchform:FormGroup;
-    constructor(private service:UserService,
+    constructor(private service:BuyerService,
       private formbuilder:FormBuilder,private route:Router) { }
   
     ngOnInit() {
@@ -35,5 +35,8 @@ export class BuyerLandingPageComponent implements OnInit {
       console.log(err);
     })
   }
-  
+  Logout(){
+    //localStorage.clear();
+    this.route.navigateByUrl('HOME');
+  }
 }

@@ -33,11 +33,11 @@ namespace EMart.BuyerService.Controllers
         }
         [HttpPost]
         [Route("BuyItem")]
-        public IActionResult BuyItem(PurchaseHistory purchaseHistory)
+        public IActionResult BuyItem(PurchaseHistory item)
         {
             try
             {
-                _repo.BuyItem(purchaseHistory);
+                _repo.BuyItem(item);
                 return Ok();
             }
             catch (Exception e)
@@ -111,6 +111,60 @@ namespace EMart.BuyerService.Controllers
             try
             {
                 return Ok(_repo.ViewItem(name));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpPost]
+        [Route("AddtoCart")]
+        public IActionResult AddtoCart(Cart cart)
+        {
+            try
+            {
+                _repo.AddtoCart(cart);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.InnerException.Message);
+            }
+        }
+        [HttpGet]
+        [Route("GetCartItems")]
+        public IActionResult GetCartItems()
+        {
+            try
+            {
+                return Ok(_repo.GetCartItems());
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+        [HttpDelete]
+        [Route("DeleteCartItem/{id}")]
+        public IActionResult DeleteCartItem(int id)
+        {
+            try
+            {
+                _repo.DeleteCartItem(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+        [HttpGet]
+        [Route("ViewOrders")]
+        public IActionResult ViewOrders()
+        {
+            try
+            {
+                return Ok(_repo.ViewOrders());
             }
             catch (Exception e)
             {

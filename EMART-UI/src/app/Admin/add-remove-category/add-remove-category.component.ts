@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 import { Category } from 'src/app/Models/category';
-import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 @Component({
   selector: 'app-add-remove-category',
   templateUrl: './add-remove-category.component.html',
@@ -13,7 +13,7 @@ export class AddRemoveCategoryComponent implements OnInit {
   category:Category;
   categoryForm:FormGroup;
   submitted=false;
-  constructor(private frombuilder:FormBuilder,private service:UserService,private route:Router) {
+  constructor(private frombuilder:FormBuilder,private service:AdminService,private route:Router) {
     this.service.GetAllCategories().subscribe(res=>{
       this.list=res;
       console.log(this.list);
@@ -63,5 +63,9 @@ export class AddRemoveCategoryComponent implements OnInit {
     {
       this.submitted=false;
       this.categoryForm.reset();
+    }
+    Logout(){
+      //localStorage.clear();
+      this.route.navigateByUrl('HOME');
     }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subcategory } from 'src/app/Models/subcategory';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
-import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-add-remove-subcategory',
@@ -15,7 +15,7 @@ subcategory:Subcategory;
 submitted=false;
 subcategoryForm:FormGroup;
 
-  constructor(private frombuilder:FormBuilder,private service:UserService,private route:Router) {
+  constructor(private frombuilder:FormBuilder,private service:AdminService,private route:Router) {
     this.service.GetAllSubCategories().subscribe(res=>{
       this.list=res;
       console.log(this.list);
@@ -74,5 +74,9 @@ subcategoryForm:FormGroup;
     {
       this.submitted=false;
       this.subcategoryForm.reset();
+    }
+    Logout(){
+     // localStorage.clear();
+      this.route.navigateByUrl('HOME');
     }
 }

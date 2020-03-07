@@ -1,0 +1,23 @@
+<div class="view">    
+  <div class="container">
+         <div class=" table">
+          <div class="table-danger">
+              <table>
+             <tr>
+                 <th>Id</th>
+                 <th>Buyer Id</th>
+                 <th>Seller Id</th>
+                 <th>Transactiontype</th>
+                 <th>Item Id</th>
+                 <th>Remarks</th>
+             </tr>
+             <tr *ngFor="let purchasehistory of list">  
+                  <td>{{purchasehistory.id}}</td>
+                  <td>{{purchasehistory.bid}}</td>
+                  <td>{{purchasehistory.sid}}</td>
+                  <td>{{purchasehistory.transactiontype}}</td>
+                  <td>{{purchasehistory.itemid}}</td>
+                  <td>{{purchasehistory.remarks}}</td>
+             </tr>
+            </table>
+          </div>   

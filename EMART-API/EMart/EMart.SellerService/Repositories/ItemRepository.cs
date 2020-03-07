@@ -40,7 +40,7 @@ namespace EMart.SellerService.Repositories
 
         public List<Items> ViewItems(int sid)
         {
-            return _context.Items.ToList();
+            return _context.Items.Where(i => i.Sid == sid).ToList();
         }
         public List<Category> GetCategories()
         {

@@ -4,7 +4,7 @@ import { Items } from 'src/app/Models/items';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/Models/category';
 import { Subcategory } from 'src/app/Models/subcategory';
-import { UserService } from 'src/app/services/user.service';
+import { SellerService } from 'src/app/services/seller.service';
 
 @Component({
   selector: 'app-additems',
@@ -23,7 +23,7 @@ export class AdditemsComponent implements OnInit {
   name:string;
   img:string;
   selectedFile : File = null;
-  constructor(private formBuilder:FormBuilder ,private service:UserService,private route:Router) {
+  constructor(private formBuilder:FormBuilder ,private service:SellerService,private route:Router) {
       this.service.GetCategories().subscribe(res=>
         {
           this.categorylist=res;
@@ -71,6 +71,7 @@ export class AdditemsComponent implements OnInit {
     this.items.stockno=this.sform.value["stockno"],
     this.items.remarks=this.sform.value["remarks"]
     this.items.imagename=this.img;
+    this.items.sid=Number(localStorage.getItem('Sid'));
     this.service.AddItem(this.items).subscribe(res=>{console.log(this.items),this.Reset()},err=>{console.log(err)}) 
     
   }
@@ -99,5 +100,8 @@ export class AdditemsComponent implements OnInit {
     fileEvent(event){
       this.img= event.target.files[0].name;
     }
-  
+    Logout(){
+      //localStorage.clear();
+      this.route.navigateByUrl('HOME');
+    }
   }

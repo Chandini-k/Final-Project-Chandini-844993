@@ -159,7 +159,7 @@
         margin-top: 95px ;
     }
     h3{
-      color:white;
+      color:#8B008B;
     }
     .register{
     background-image: url('src/assets/images/additems.jpg');
@@ -168,7 +168,7 @@
     background-size: 100% 100%;
     }
     label{
-    color:white;
+    color:black;
     right: 20px;
     }
     .form{

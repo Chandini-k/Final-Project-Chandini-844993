@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { PurchaseHistory } from 'src/app/Models/purchase-history';
 import { Buyer } from 'src/app/Models/buyer';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from 'src/app/services/user.service';
 import { Items } from 'src/app/Models/items';
+import { Router } from '@angular/router';
+import { BuyerService } from 'src/app/services/buyer.service';
 
 @Component({
   selector: 'app-buyproduct',
@@ -16,16 +17,21 @@ buyer:Buyer;
 submitted=false;
 payform:FormGroup
 list:PurchaseHistory[]=[];
+list1:Items[]=[];
 item:Items;
-  constructor(private formbuilder:FormBuilder,private service:UserService) { 
+  constructor(private formbuilder:FormBuilder,private service:BuyerService,private route:Router) { 
     // this.sid=JSON.parse(localStorage.getItem('Sid')) ;
     // this.bid=JSON.parse(localStorage.getItem('Bid')) ;
+    this.item=JSON.parse(localStorage.getItem('item'));
+    this.list1.push(this.item)
+  console.log(this.item);
+  console.log(this.item.id);
   }
 
 ngOnInit() {
-  this. payform=this.formbuilder.group({
+  this.payform=this.formbuilder.group({
     transactiontype:[''],
-    cardNumber:[''],
+    cardnumber:[''],
     cvv:[''],
     edate:[''],
     name:[''],
@@ -33,26 +39,36 @@ ngOnInit() {
     noofitems:[''],
     remarks:['']
   })
-  this.item=JSON.parse(localStorage.getItem('item'));
-  console.log(this.item);
-  console.log(this.item.id);
 }
 onSubmit()
 {
 this.purchasehistory=new PurchaseHistory();
 this.purchasehistory.id=Math.floor(Math.random()*999);
 this.purchasehistory.bid=Number(localStorage.getItem('Bid'));
-this.purchasehistory.sid=this.item.sid;
-this.purchasehistory.noofitems=this.payform.value["noofitems"];
-this.purchasehistory.id=this.item.id;
+this.purchasehistory.sid=Number(localStorage.getItem('Sid'));
+this.purchasehistory.noofitems=Number(this.payform.value["noofitems"]);
+this.purchasehistory.itemid=this.item.id;
 this.purchasehistory.transactiontype=this.payform.value["transactiontype"]
    this.purchasehistory.datetime=this.payform.value["datetime"];
    this.purchasehistory.remarks=this.payform.value["remarks"];
+   this.list.push(this.purchasehistory)
    console.log(this.purchasehistory);
    this.service.BuyItem(this.purchasehistory).subscribe(res=>{
      console.log("Purchase was Sucessfull");
      alert('Purchase Done Successfully');
+    this.Delete();
    })
 
+}
+Delete(){
+  console.log(this.item.id);
+  let id=this.item.id
+  this.service.RemoveCartItem(id).subscribe(res=>{
+    console.log('Cart item Removed');
+  })
+}
+Logout(){
+  //localStorage.clear();
+  this.route.navigateByUrl('HOME');
 }
 }

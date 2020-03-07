@@ -7,6 +7,7 @@ namespace EMart.BuyerService.Models
     {
         public Items()
         {
+            Cart = new HashSet<Cart>();
             PurchaseHistory = new HashSet<PurchaseHistory>();
             PurchaseHistory1 = new HashSet<PurchaseHistory1>();
         }
@@ -19,9 +20,12 @@ namespace EMart.BuyerService.Models
         public string Description { get; set; }
         public int? Stockno { get; set; }
         public string Remarks { get; set; }
+        public int? Sid { get; set; }
+        public string Imagename { get; set; }
 
         public virtual Category Category { get; set; }
-        public virtual SubCategory Subcatergory { get; set; }
+        public virtual Seller S { get; set; }
+        public virtual ICollection<Cart> Cart { get; set; }
         public virtual ICollection<PurchaseHistory> PurchaseHistory { get; set; }
         public virtual ICollection<PurchaseHistory1> PurchaseHistory1 { get; set; }
     }

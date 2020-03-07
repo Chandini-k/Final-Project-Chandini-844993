@@ -136,6 +136,9 @@
     font-size: 36px;
     margin-left: 50px;
   }
-  
-  
+  .view{
+    width: 50%;
+    box-align:center;
+    margin: 100px;
+  }
   

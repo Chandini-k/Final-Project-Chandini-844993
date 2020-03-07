@@ -63,10 +63,10 @@ flag:number=0;
         let username=this.userForm.value['username']
         let password=this.userForm.value['password']
         let role=this.userForm.value['role']
-        // if(username=="chandinichandu"&&password=="chandini2205")
-        // {
-        //   this.route.navigateByUrl('ADMIN')
-        // }
+        if(username=="admin"&&password=="12345")
+        {
+          this.route.navigateByUrl('ADMIN')
+        }
         if(role=='buyer')
         {
           let token=new Token()
