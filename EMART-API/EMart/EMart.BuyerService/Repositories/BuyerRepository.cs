@@ -35,23 +35,15 @@ namespace EMart.BuyerService.Repositories
           return _context.Items.Where(e => e.Itemname == name).ToList();
             
         }
-
-        public List<PurchaseHistory> TransactionHistory(int bid)
-        {
-            return _context.PurchaseHistory.ToList();
-        }
         public List<Category> GetCategories()
         {
             return _context.Category.ToList();
         }
         public List<SubCategory> GetSubCategories(int cid)
         {
-            return _context.SubCategory.ToList();
+            return _context.SubCategory.Where(e=>e.Cid==cid).ToList();
         }
-        public List<Items> ViewItem(string name)
-        {
-            return _context.Items.Where(e => e.Itemname == name).ToList();
-        }
+
         public void AddtoCart(Cart cart)
         {
             _context.Add(cart);
@@ -63,13 +55,13 @@ namespace EMart.BuyerService.Repositories
             _context.Cart.Remove(cart);
             _context.SaveChanges();
         }
-        public List<Cart> GetCartItems()
+        public List<Cart> GetCartItems(int bid)
         {
-            return _context.Cart.ToList();
+            return _context.Cart.Where(e => e.Bid == bid).ToList();
         }
-        public List<PurchaseHistory> ViewOrders()
+        public List<PurchaseHistory> ViewOrders(int bid)
         {
-            return _context.PurchaseHistory.ToList();
+            return _context.PurchaseHistory.Where(e => e.Bid == bid).ToList();
         }
     }
 }

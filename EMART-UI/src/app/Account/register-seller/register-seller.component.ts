@@ -18,7 +18,6 @@ seller:Seller;
 
   ngOnInit() {
     this.sellerForm=this.frombuilder.group({
-      sid:['',[Validators.required,Validators.pattern("^[0-9]{4}$")]],
       username:['',[Validators.required,Validators.pattern("^[A-Za-z]{0,}$")]],
       password:['',[Validators.required,Validators.pattern("^[A-Za-z]{7,}[!@#$%^&*]")]],
       companyname:['',Validators.required],
@@ -37,18 +36,11 @@ seller:Seller;
     }
       else{
         this.seller=new Seller();
-
       this.seller.sid=Math.floor(Math.random()*1000);
       this.seller.username=this.sellerForm.value["username"];
       this.seller.password=this.sellerForm.value["password"];
       this.seller.companyname=this.sellerForm.value["companyname"];
       this.seller.gst=Number(this.sellerForm.value["gst"]);
-      this.seller.sid=this.sellerForm.value["sid"];
-      this.seller.username=this.sellerForm.value["username"];
-      this.seller.password=this.sellerForm.value["password"];
-      this.seller.companyname=this.sellerForm.value["companyname"];
-      this.seller.gst=this.sellerForm.value["gst"];
-
       this.seller.aboutcmpy=this.sellerForm.value["aboutcmpy"];
       this.seller.address=this.sellerForm.value["address"];
       this.seller.website=this.sellerForm.value["website"];

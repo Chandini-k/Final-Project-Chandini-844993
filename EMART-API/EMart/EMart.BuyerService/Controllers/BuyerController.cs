@@ -66,19 +66,6 @@ namespace EMart.BuyerService.Controllers
             }
         }
         [HttpGet]
-        [Route("TransactionHistory")]
-        public IActionResult TransactionHistory(int bid)
-        {
-            try
-            {
-                return Ok(_repo.TransactionHistory(bid));
-            }
-            catch (Exception e)
-            {
-                return NotFound(e.Message);
-            }
-        }
-        [HttpGet]
         [Route("Category")]
         public IActionResult Category()
         {
@@ -104,19 +91,6 @@ namespace EMart.BuyerService.Controllers
                 return NotFound(e.Message);
             }
         }
-        [HttpGet]
-        [Route("ViewItems/{name}")]
-        public IActionResult Get(string name)
-        {
-            try
-            {
-                return Ok(_repo.ViewItem(name));
-            }
-            catch (Exception e)
-            {
-                return NotFound(e.Message);
-            }
-        }
         [HttpPost]
         [Route("AddtoCart")]
         public IActionResult AddtoCart(Cart cart)
@@ -132,12 +106,12 @@ namespace EMart.BuyerService.Controllers
             }
         }
         [HttpGet]
-        [Route("GetCartItems")]
-        public IActionResult GetCartItems()
+        [Route("GetCartItems/{bid}")]
+        public IActionResult GetCartItems(int bid)
         {
             try
             {
-                return Ok(_repo.GetCartItems());
+                return Ok(_repo.GetCartItems(bid));
             }
             catch (Exception ex)
             {
@@ -159,12 +133,12 @@ namespace EMart.BuyerService.Controllers
             }
         }
         [HttpGet]
-        [Route("ViewOrders")]
-        public IActionResult ViewOrders()
+        [Route("ViewOrders/{bid}")]
+        public IActionResult ViewOrders(int bid)
         {
             try
             {
-                return Ok(_repo.ViewOrders());
+                return Ok(_repo.ViewOrders(bid));
             }
             catch (Exception e)
             {

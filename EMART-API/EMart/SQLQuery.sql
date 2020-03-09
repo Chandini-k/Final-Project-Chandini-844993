@@ -7,6 +7,7 @@ email varchar(20) not null,
 mobileno varchar(20) not null,
 datetime date)
 select * from Buyer
+delete Buyer where bid=827
 create table Seller(sid int primary key,
 username varchar(20) not null,
 password varchar(20) not null,
@@ -18,12 +19,13 @@ website varchar(20),
 email varchar(20) not null,
 mobileno varchar(20) not null)
 select * from Seller
-delete Seller where sid=3
+delete Seller where sid=1
 create table Category(cid int primary key,
 cname varchar(20) not null,
 cdetails varchar(20))
 insert into Category values(1,'fashion','men fashion');
 select * from Category
+delete Category where cid=1235
 create table SubCategory(subid int primary key,
 subname varchar(20) not null,
 cid int foreign key references Category(cid),
@@ -43,6 +45,7 @@ insert into SubCategory values(162,'Barbie',955,'kid',545,'toys');
 insert into SubCategory values(167,'Doll',955,'kid',382,'toys');
 
 select * from SubCategory
+delete SubCategory where subid=985
 alter table SubCategory drop column cid
 create table Items(id int primary key,
 categoryid int foreign key references Category(cid),
@@ -72,7 +75,7 @@ noofitems int,
 datetime date not null,
 remarks varchar(20))
 select * from Purchase_history
-delete Purchase_history where id=103
+delete Purchase_history where id=259
 ALTER TABLE Purchase_history ADD transactionstatus varchar(20)
 create table Users(uname varchar(20) not null,
 pwd varchar(20) not null)

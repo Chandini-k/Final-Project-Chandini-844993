@@ -12,13 +12,11 @@ namespace EMart.BuyerService.Repositories
         public void BuyItem(PurchaseHistory item);
         public void EditProfileBuyer(Buyer buyer);
         public Buyer ProfileBuyer(int bid);
-        List<PurchaseHistory> TransactionHistory(int bid);
         List<Category> GetCategories();
         List<SubCategory> GetSubCategories(int cid);
-        List<Items> ViewItem(string name);
        public void AddtoCart(Cart cart);
-        List<Cart> GetCartItems();
+        List<Cart> GetCartItems(int bid);
        public void DeleteCartItem(int itemid);
-        List<PurchaseHistory> ViewOrders();
+        List<PurchaseHistory> ViewOrders(int bid);
     }
 }

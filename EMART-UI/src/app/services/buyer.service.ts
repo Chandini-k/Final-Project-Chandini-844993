@@ -39,16 +39,16 @@ export class BuyerService {
   public AddtoCart(cart:Cart):Observable<any>{
     return this.http.post<any>(this.url4+'AddtoCart',cart,Requestheaders);
   }
-  public GetCartItems():Observable<any>
+  public GetCartItems(id:number):Observable<any>
   {
-    return this.http.get<any>(this.url4+'GetCartItems',Requestheaders);
+    return this.http.get<any>(this.url4+'GetCartItems/'+id,Requestheaders);
   }
   public RemoveCartItem(itemid:number):Observable<any>
   {
     return this.http.delete<any>(this.url4+'DeleteCartItem/'+itemid,Requestheaders);
   }
-  public ViewOrders():Observable<any>
+  public ViewOrders(id:number):Observable<any>
   {
-    return this.http.get<any>(this.url4+'ViewOrders',Requestheaders);
+    return this.http.get<any>(this.url4+'ViewOrders/'+id,Requestheaders);
   }
 }

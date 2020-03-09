@@ -13,7 +13,8 @@ export class ViewcartComponent implements OnInit {
   cartlist:Cart[];
   item:Items;
     constructor(private route:Router,private service:BuyerService) {
-      this.service.GetCartItems().subscribe(res=>{
+      let id=Number(localStorage.getItem('Bid'))
+      this.service.GetCartItems(id).subscribe(res=>{
         this.cartlist=res;
         console.log(this.cartlist);
       })

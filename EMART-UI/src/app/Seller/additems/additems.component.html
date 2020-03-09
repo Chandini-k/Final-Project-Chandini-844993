@@ -22,7 +22,7 @@
                 <tr>         
                  <td>       <label for="subcategoryname" class="label">Sub Category Name</label></td>
              <td>       <select formControlName="subcatergoryid" class="form-control">
-              <option *ngFor="let items of subcategorylist" value={{items.subcatergoryid}}>{{items.subname}}</option>   
+              <option *ngFor="let items of subcategorylist" value={{items.subid}}>{{items.subname}}</option>   
          </select>
          </td>
                     <div *ngIf="submitted && f.subcatergoryid.errors" class="invalid-feedback">
