@@ -128,5 +128,31 @@ namespace EMart.AdminService.Controllers
                 return NotFound(e.Message);
             }
         }
+        [HttpGet]
+        [Route("GetSubCategory/{subid}")]
+        public IActionResult GetSubCategory(int subid)
+        {
+            try
+            {
+                return Ok(_repo.GetSubCategory(subid));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+        [HttpGet]
+        [Route("GetCategory/{cid}")]
+        public IActionResult GetCategory(int cid)
+        {
+            try
+            {
+                return Ok(_repo.GetCategory(cid));
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
     }
 }

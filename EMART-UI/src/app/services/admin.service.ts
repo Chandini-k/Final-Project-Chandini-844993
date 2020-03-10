@@ -33,10 +33,10 @@ export class AdminService {
   }
   public GetAllCategories():Observable<Category[]>
   {
-     return this.http.get<Category[]>(this.url+'Category',Requestheaders)
+     return this.http.get<Category[]>(this.url+'GetCategory',Requestheaders)
   }
   public GetAllSubCategories():Observable<Subcategory[]>
   {
-     return this.http.get<Subcategory[]>(this.url+'SubCategory',Requestheaders)
+     return this.http.get<Subcategory[]>(this.url+'GetSubCategory',Requestheaders)
   }
 }

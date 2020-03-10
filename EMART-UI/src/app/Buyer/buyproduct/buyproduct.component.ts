@@ -23,7 +23,7 @@ item:Items;
     // this.sid=JSON.parse(localStorage.getItem('Sid')) ;
     // this.bid=JSON.parse(localStorage.getItem('Bid')) ;
     this.item=JSON.parse(localStorage.getItem('item'));
-    this.list1.push(this.item)
+    //this.list1.push(this.item)
   console.log(this.item);
   console.log(this.item.id);
   }

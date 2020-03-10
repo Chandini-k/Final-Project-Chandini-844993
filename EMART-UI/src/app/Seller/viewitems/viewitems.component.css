@@ -148,8 +148,8 @@
   .label{
     text-align: center;
   }
-  input[type=text]{
-    width: 80%;
+  input[type=text],input[type=number]{
+    width: 70%;
     padding: 12px 15px;
     margin: 8px 0;
     display: inline-block;

@@ -14,18 +14,20 @@ export class AddRemoveCategoryComponent implements OnInit {
   categoryForm:FormGroup;
   submitted=false;
   constructor(private frombuilder:FormBuilder,private service:AdminService,private route:Router) {
-    this.service.GetAllCategories().subscribe(res=>{
-      this.list=res;
-      console.log(this.list);
-    },err=>{
-      console.log(err)
-    })
   }
 
   ngOnInit() {
     this.categoryForm=this.frombuilder.group({
       cname:['',Validators.required],
       cdetails:['',Validators.required]
+    });
+  }
+  Category(){
+    this.service.GetAllCategories().subscribe(res=>{
+      this.list=res;
+      console.log(this.list);
+    },err=>{
+      console.log(err)
     });
   }
   onSubmitAdd(){
@@ -41,6 +43,7 @@ export class AddRemoveCategoryComponent implements OnInit {
       this.category.cdetails=this.categoryForm.value["cdetails"];
       this.list.push(this.category)
       console.log(this.category);
+      localStorage.setItem("category",JSON.stringify(this.category));
     this.service.AddCategory(this.category).subscribe(res=>
       {
         this.route.navigateByUrl('ADMIN')

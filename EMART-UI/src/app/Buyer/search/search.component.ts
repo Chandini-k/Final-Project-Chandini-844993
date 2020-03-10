@@ -19,10 +19,10 @@ export class SearchComponent implements OnInit {
   cart:Cart;
   list1:Items[]=[];
   constructor(private builder:FormBuilder,private service:BuyerService,private route:Router) {
-    this.item=JSON.parse(localStorage.getItem('item'));
-    this.list1.push(this.item)
-  console.log(this.item);
-  console.log(this.item.id);
+  //   this.item=JSON.parse(localStorage.getItem('item'));
+  //   this.list1.push(this.item)
+  // console.log(this.item);
+  // console.log(this.item.id);
  }
 
   ngOnInit() {

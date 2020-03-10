@@ -145,5 +145,11 @@ namespace EMart.BuyerService.Controllers
                 return NotFound(e.Message);
             }
         }
+        [HttpGet]
+        [Route("Cart/{id}")]
+        public IActionResult GetCart(int id)
+        {
+            return Ok(_repo.GetCart(id));
+        }
     }
 }

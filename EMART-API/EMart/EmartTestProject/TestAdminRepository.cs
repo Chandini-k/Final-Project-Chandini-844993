@@ -49,17 +49,31 @@ namespace EmartTestProject
         [Description("Test Delete Category")]
         public void TestDeleteCategory()
         {
-            _repo.DeleteCategory(485);
-            var result = _repo.GetAllCategories();
+            _repo.DeleteCategory(4856);
+            var result = _repo.GetCategory(4856);
             Assert.Null(result);
         }
         [Test]
         [Description("Test Delete SubCategory")]
         public void TestDeleteSubCategory()
         {
-            _repo.DeleteSubCategory(485);
-            var result = _repo.GetAllSubCategories();
+            _repo.DeleteSubCategory(985);
+            var result = _repo.GetSubCategory(985);
             Assert.Null(result);
+        }
+        [Test]
+        [Description("Test Category")]
+        public void TestGetCategory()
+        {
+            var result = _repo.GetCategory(955);
+            Assert.NotNull(result);
+        }
+        [Test]
+        [Description("Test SubCategory")]
+        public void TestGetSubCategory()
+        {
+            var result = _repo.GetSubCategory(145);
+            Assert.NotNull(result);
         }
     }
 }

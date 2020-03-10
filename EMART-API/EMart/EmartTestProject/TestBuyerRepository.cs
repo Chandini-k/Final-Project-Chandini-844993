@@ -113,9 +113,9 @@ namespace EmartTestProject
         [Description("Test DeleteCartItem")]
         public void TestDeleteCart()
         {
-            _repo.DeleteCartItem(362);
-            var result = _repo.GetCartItems(1234);
-            Assert.IsNotNull(result);
+            _repo.DeleteCartItem(753);
+            var result = _repo.GetCart(753);
+            Assert.Null(result);
         }
     }
 }

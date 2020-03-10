@@ -3,6 +3,7 @@ import { Subcategory } from 'src/app/Models/subcategory';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
+import { Category } from 'src/app/Models/category';
 
 @Component({
   selector: 'app-add-remove-subcategory',
@@ -14,27 +15,29 @@ list:Subcategory[]=[];
 subcategory:Subcategory;
 submitted=false;
 subcategoryForm:FormGroup;
-
+category:Category;
+list1:Category[]=[];
   constructor(private frombuilder:FormBuilder,private service:AdminService,private route:Router) {
-    this.service.GetAllSubCategories().subscribe(res=>{
-      this.list=res;
-      console.log(this.list);
-    },err=>{
-      console.log(err)
-    })
+    
    }
 
 
   ngOnInit() {
     this.subcategoryForm=this.frombuilder.group({
       subname:['',Validators.required],
-      subid:['',Validators.required],
       cname:['',Validators.required],
-      cid:['',Validators.required],
       sdetails:['',Validators.required],
       gst:['',Validators.required]
     });
 
+  }
+  SubCategory(){
+    this.service.GetAllSubCategories().subscribe(res=>{
+      this.list=res;
+      console.log(this.list);
+    },err=>{
+      console.log(err)
+    });
   }
   onSubmitAdd(){
     this.submitted=true;
@@ -44,11 +47,10 @@ subcategoryForm:FormGroup;
       else{
         this.subcategory=new Subcategory();
       this.subcategory.subid=Math.floor(Math.random()*1000);
-      this.subcategory.subid=this.subcategoryForm.value["subid"];
       this.subcategory.subname=this.subcategoryForm.value["subname"];
       this.subcategory.cname=this.subcategoryForm.value["cname"];
       this.subcategory.sdetails=this.subcategoryForm.value["sdetails"];
-      this.subcategory.cid=Number(this.subcategoryForm.value["cid"]);
+      this.subcategory.cid=this.subcategoryForm.value["cid"];
       this.subcategory.gst=Number(this.subcategoryForm.value["gst"]);
       this.list.push(this.subcategory)
       console.log(this.subcategory);

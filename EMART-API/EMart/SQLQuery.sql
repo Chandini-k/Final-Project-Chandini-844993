@@ -45,7 +45,7 @@ insert into SubCategory values(162,'Barbie',955,'kid',545,'toys');
 insert into SubCategory values(167,'Doll',955,'kid',382,'toys');
 
 select * from SubCategory
-delete SubCategory where subid=985
+delete SubCategory where subid=728
 alter table SubCategory drop column cid
 create table Items(id int primary key,
 categoryid int foreign key references Category(cid),

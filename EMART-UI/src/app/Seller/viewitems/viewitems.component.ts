@@ -27,7 +27,15 @@ export class ViewitemsComponent implements OnInit {
    }
    ngOnInit() {
     this.itemForm=this.builder.group({
-      sid:['']
+       id:[''],
+       categoryid:[''],
+       subcatergoryid:[''],
+       price:[''],
+        itemname:[''],
+        description:[''],
+        stockno:[''],
+        remarks:[''],
+        sid:['']
     });
   }
   get f() { return this.itemForm.controls; }
@@ -64,17 +72,18 @@ export class ViewitemsComponent implements OnInit {
   }
   view(id:number)
 {
- this.item=new Items()
+ this.list1=new Items()
   this.service.GetById(id).subscribe(
     res=>{
-      this.item=res;
-      console.log(this.item)
-      localStorage.setItem("id",this.item.id.toString())
+      this.list1=res;
+      console.log(this.list1)
+      localStorage.setItem("id",this.list1.id.toString())
       this.itemForm.patchValue({
-          itemname:this.item.itemname,
-          price:Number(this.item.price),
-          stockno:Number(this.item.stockno),
-          description:this.item.description
+          itemname:this.list1.itemname,
+          price:Number(this.list1.price),
+          stockno:Number(this.list1.stockno),
+          description:this.list1.description,
+          remarks:this.list1.remarks
         })
       })
     }

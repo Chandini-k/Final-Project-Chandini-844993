@@ -56,5 +56,13 @@ namespace EMart.AdminService.Repositories
             _context.SubCategory.Update(subCategory);
             _context.SaveChanges();
         }
+        public Category GetCategory(int cid)
+        {
+            return _context.Category.Find(cid);
+        }
+        public SubCategory GetSubCategory(int subid)
+        {
+            return _context.SubCategory.Find(subid);
+        }
     }
 }
