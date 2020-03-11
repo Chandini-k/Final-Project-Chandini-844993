@@ -27,12 +27,13 @@ export class ViewitemsComponent implements OnInit {
    }
    ngOnInit() {
     this.itemForm=this.builder.group({
-      //id:[''],
-       price:[''],
-        itemname:[''],
-        description:[''],
+        id:[''],
+       itemname:[''],
+        price:[''],
         stockno:[''],
-        remarks:['']
+        description:[''],
+        remarks:[''],
+        sid:['']
     });
   }
   get f() { return this.itemForm.controls; }
@@ -55,8 +56,9 @@ export class ViewitemsComponent implements OnInit {
   this.item.stockno=Number(this.itemForm.value["stockno"]);
   this.item.remarks=this.itemForm.value["remarks"];
   this.item.description=this.itemForm.value["description"];
-  this.item.imagename=this.itemForm.value["imagename"]
-  console.log(this.item);
+  this.item.imagename=this.itemForm.value["imagename"];
+  this.item.sid=Number(this.itemForm.value["sid"])
+  //console.log(this.item);
   this.service.UpdateItem(this.item).subscribe(res=>{console.log(this.item),alert("updated succesfully")},err=>{
     console.log(err)
   })
