@@ -27,15 +27,15 @@ export class ViewitemsComponent implements OnInit {
    }
    ngOnInit() {
     this.itemForm=this.builder.group({
-       id:[''],
-       categoryid:[''],
-       subcatergoryid:[''],
+      //  id:[''],
+      //  categoryid:[''],
+      //  subcatergoryid:[''],
        price:[''],
         itemname:[''],
         description:[''],
         stockno:[''],
-        remarks:[''],
-        sid:['']
+        remarks:['']
+        //sid:['']
     });
   }
   get f() { return this.itemForm.controls; }
@@ -50,10 +50,10 @@ export class ViewitemsComponent implements OnInit {
   Edit()
   {
   this.item=new Items();
-   this.item.id=Number(localStorage.getItem("id"));
+  this.item.id=Number(this.itemForm.value["id"]);
   this.item.itemname=this.itemForm.value["itemname"];
   this.item.price=this.itemForm.value["price"];
-  this.item.stockno=Number(this.itemForm.value["stocko"]);
+  this.item.stockno=Number(this.itemForm.value["stockno"]);
   this.item.remarks=this.itemForm.value["remarks"];
   this.item.description=this.itemForm.value["description"];
   console.log(this.item);
