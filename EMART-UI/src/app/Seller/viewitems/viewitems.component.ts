@@ -33,12 +33,15 @@ export class ViewitemsComponent implements OnInit {
    ngOnInit() {
     this.itemForm=this.builder.group({
         id:[''],
+        categoryid:[''],
+        subcatergoryid:[''],
        itemname:[''],
         price:[''],
         stockno:[''],
         description:[''],
-        remarks:['']
-        //sid:['']
+        remarks:[''],
+        imagename:[''],
+        sid:['']
     });
   }
   get f() { return this.itemForm.controls; }
