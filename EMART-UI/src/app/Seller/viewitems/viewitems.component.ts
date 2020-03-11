@@ -27,9 +27,7 @@ export class ViewitemsComponent implements OnInit {
    }
    ngOnInit() {
     this.itemForm=this.builder.group({
-      id:[''],
-      categoryid:[''],
-      subcatergoryid:[''],
+      //id:[''],
        price:[''],
         itemname:[''],
         description:[''],
