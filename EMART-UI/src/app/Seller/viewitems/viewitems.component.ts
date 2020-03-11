@@ -80,7 +80,7 @@ export class ViewitemsComponent implements OnInit {
       localStorage.setItem("id",this.list1.id.toString())
       this.itemForm.patchValue({
           itemname:this.list1.itemname,
-          price:Number(this.list1.price),
+          price:this.list1.price,
           stockno:Number(this.list1.stockno),
           description:this.list1.description,
           remarks:this.list1.remarks
