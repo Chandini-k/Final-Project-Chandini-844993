@@ -27,15 +27,14 @@ export class ViewitemsComponent implements OnInit {
    }
    ngOnInit() {
     this.itemForm=this.builder.group({
-      //  id:[''],
-      //  categoryid:[''],
-      //  subcatergoryid:[''],
+      id:[''],
+      categoryid:[''],
+      subcatergoryid:[''],
        price:[''],
         itemname:[''],
         description:[''],
         stockno:[''],
         remarks:['']
-        //sid:['']
     });
   }
   get f() { return this.itemForm.controls; }
@@ -51,11 +50,14 @@ export class ViewitemsComponent implements OnInit {
   {
   this.item=new Items();
   this.item.id=Number(this.itemForm.value["id"]);
+  this.item.categoryid=Number(this.itemForm.value["categoryid"]);
+  this.item.subcatergoryid=Number(this.itemForm.value["subcatergoryid"]);
   this.item.itemname=this.itemForm.value["itemname"];
   this.item.price=this.itemForm.value["price"];
   this.item.stockno=Number(this.itemForm.value["stockno"]);
   this.item.remarks=this.itemForm.value["remarks"];
   this.item.description=this.itemForm.value["description"];
+  this.item.imagename=this.itemForm.value["imagename"]
   console.log(this.item);
   this.service.UpdateItem(this.item).subscribe(res=>{console.log(this.item),alert("updated succesfully")},err=>{
     console.log(err)
@@ -79,11 +81,15 @@ export class ViewitemsComponent implements OnInit {
       console.log(this.list1)
       localStorage.setItem("id",this.list1.id.toString())
       this.itemForm.patchValue({
+        id:Number(this.list1.id),
+        categoryid:Number(this.list1.categoryid),
+        subcatergoryid:Number(this.list1.subcatergoryid),
           itemname:this.list1.itemname,
           price:this.list1.price,
           stockno:Number(this.list1.stockno),
           description:this.list1.description,
-          remarks:this.list1.remarks
+          remarks:this.list1.remarks,
+          imagename:this.list1.imagename
         })
       })
     }
