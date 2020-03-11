@@ -58,9 +58,10 @@ remarks varchar(20))
 alter table Items add categoryid int foreign key references Category(cid)
 alter table Items add subcategoryid int foreign key references SubCategory(subid)
 select * from Items
-delete Items where id=1;
+delete Items where id=746;
 alter table Items drop column categoryid
 alter table Items drop column subcategoryid
+
 alter table Items drop column sid
 alter table Items add categoryname varchar(20)
 alter table Items add subcategoryname varchar(20)

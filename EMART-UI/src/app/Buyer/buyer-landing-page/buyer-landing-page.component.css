@@ -26,6 +26,9 @@
 .topnav .search-container {
   float: right;
 }
+.topnav .search-containers {
+  float: right;
+}
 
 .topnav input[type=text] {
   padding: 6px;
@@ -46,6 +49,20 @@
 }
 
 .topnav .search-container button:hover {
+  background: #ccc;
+}
+.topnav .search-containers button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background:pink;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-containers button:hover {
   background: #ccc;
 }
 

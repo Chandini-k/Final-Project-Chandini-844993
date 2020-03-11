@@ -27,6 +27,7 @@ import { ViewprofileComponent } from './Seller/viewprofile/viewprofile.component
 import { HomeComponent } from './Account/home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { UserService } from './services/user.service';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { UserService } from './services/user.service';
     BuyerLandingPageComponent,
     ViewprofileBuyerComponent,
     ViewprofileComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -3,17 +3,15 @@
     <a><span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;BUYER DASHBOARD</span></a>
     <a [routerLink]="'SEARCH ITEMS'">SEARCH</a>
   <a [routerLink]="'PURCHASE-HISTORY'">PURCHASE HISTORY</a>
-  <a [routerLink]="'VIEW CART'">VIEW CART</a>
   <a [routerLink]="'VIEW PROFILE-BUYER'">PROFILE</a>
   <div class="search-container">
     <form>
       <button type="submit" (click)="Logout()"><i class="fa fa-sign-out"></i>Logout</button>
     </form>
   </div>
-  <div class="search-container">
+  <div class="search-containers">
       <form>
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit" [routerLink]="'SEARCH ITEMS'"><i class="fa fa-search"></i></button>
+        <button type="submit" [routerLink]="'VIEW CART'"><i class="fa fa-cart-arrow-down"></i></button>
       </form>
     </div>
   </div></nav>
