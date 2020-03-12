@@ -66,7 +66,7 @@ export class SearchComponent implements OnInit {
    console.log(this.cart);
    this.service.AddtoCart(this.cart).subscribe(res=>{
      console.log("Record added To Cart");
-     alert('Item has been Added To Cart');
+     alert('Added To Cart');
    })
   }
   Logout(){

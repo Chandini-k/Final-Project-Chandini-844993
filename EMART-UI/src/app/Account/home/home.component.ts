@@ -5,7 +5,7 @@ import { UserService } from 'src/app/services/user.service';
 import { Buyer } from 'src/app/Models/buyer';
 import { Seller } from 'src/app/Models/seller';
 import { Router } from '@angular/router';
-// import { Token } from '@angular/compiler/src/ml_parser/lexer';
+
 import {Token} from 'src/app/Models/token';
 @Component({
   selector: 'app-home',
@@ -20,7 +20,6 @@ buyer:Buyer;
 seller:Seller;
 token:Token;
 role: string;
-flag:number=0;
   constructor(private frombuilder:FormBuilder,private service:UserService,private route:Router) { }
 
   ngOnInit() {
@@ -79,6 +78,10 @@ flag:number=0;
           localStorage.setItem("Bid",this.token.buyerid.toString());
           this.route.navigateByUrl('BUYER')
             }
+            else{
+              alert("invalid username or password")
+              this.onReset();
+            }
       });
     }
     if(role=='seller')
@@ -92,6 +95,10 @@ flag:number=0;
           localStorage.setItem("token",this.token.token);
           localStorage.setItem("Sid",this.token.sellerid.toString());
           this.route.navigateByUrl('SELLER')
+        }
+        else{
+          alert("invalid username or password")
+          this.onReset();
         }
   });
 }

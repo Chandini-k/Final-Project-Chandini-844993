@@ -160,7 +160,7 @@
   .bg-image{
     background-image: url("src\assets\images\bgc.jpg");
     background-color: #cccccc;
-    height: auto;
+    height: 700px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
