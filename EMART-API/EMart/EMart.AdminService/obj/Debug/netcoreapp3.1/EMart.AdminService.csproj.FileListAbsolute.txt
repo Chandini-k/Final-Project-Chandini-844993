@@ -242,3 +242,4 @@ C:\FINAL\Final-Project-Chandini-844993-master\EMART-API\EMart\EMart.AdminService
 C:\FINAL\Final-Project-Chandini-844993-master\EMART-API\EMart\EMart.AdminService\obj\Debug\netcoreapp3.1\EMart.AdminService.csproj.CopyComplete
 C:\FINAL\Final-Project-Chandini-844993-master\EMART-API\EMart\EMart.AdminService\obj\Debug\netcoreapp3.1\EMart.AdminService.dll
 C:\FINAL\Final-Project-Chandini-844993-master\EMART-API\EMart\EMart.AdminService\obj\Debug\netcoreapp3.1\EMart.AdminService.pdb
+C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.AdminService\obj\Debug\netcoreapp3.1\EMart.AdminService.MvcApplicationPartsAssemblyInfo.cache

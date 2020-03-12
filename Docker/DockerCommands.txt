@@ -1,0 +1,16 @@
+1. docker build –t image_nameimage_path
+1.1 docker build –t image_name .
+2.docker run –d –p 8001:80 –name container_nameimage_name
+3. docker images(List all the images)
+4.docker ps(List all the running containers)
+5.dockerps –a(List all the containers)
+6.docker stop containerId/containername (Stop the container)
+docker stop core1
+	docker stop core1 core2 core3(stop the multiple containers)
+7.docker start containerId/containername(Start the stopped containers)
+8. dockerrmcontainerId/containername(Remove the container)(Will not able to start again)
+Docker rm core1 core2 core3
+9.docker tag image_nameimage_name:version(create an image with version)
+docker tag coreappimage coreappimage:1.0
+docker tag coreappimage coreappimage:1.1
+docker run -d -p 8006:83 –name core1 coreappimage:1.0(Run the image with version 1.0)
