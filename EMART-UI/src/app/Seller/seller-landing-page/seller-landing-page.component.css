@@ -95,7 +95,7 @@
  .bg-image{
   background-image: url("src\assets\images\bgc.jpg");
   background-color: #cccccc;
-  height: 900px;
+  height:900px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

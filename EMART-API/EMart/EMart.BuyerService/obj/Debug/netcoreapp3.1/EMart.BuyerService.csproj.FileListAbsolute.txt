@@ -263,5 +263,3 @@ C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.BuyerService\bin\Debug\ne
 C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.BuyerService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.BuyerService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.BuyerService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.BuyerService\obj\Debug\netcoreapp3.1\EMart.BuyerService.MvcApplicationPartsAssemblyInfo.cs
-C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.BuyerService\obj\Debug\netcoreapp3.1\EMart.BuyerService.MvcApplicationPartsAssemblyInfo.cache

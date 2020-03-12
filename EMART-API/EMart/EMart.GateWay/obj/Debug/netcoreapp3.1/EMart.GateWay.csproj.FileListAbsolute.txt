@@ -59,5 +59,3 @@ C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.GateWay\bin\Debug\netcore
 C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.GateWay\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.GateWay\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.GateWay\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.GateWay\obj\Debug\netcoreapp3.1\EMart.GateWay.MvcApplicationPartsAssemblyInfo.cs
-C:\FINAL-PROJECT-CHANDINI-844993\EMART-API\EMart\EMart.GateWay\obj\Debug\netcoreapp3.1\EMart.GateWay.MvcApplicationPartsAssemblyInfo.cache
