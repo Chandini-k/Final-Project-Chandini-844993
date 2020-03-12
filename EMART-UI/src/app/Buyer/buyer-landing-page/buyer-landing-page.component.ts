@@ -28,7 +28,6 @@ export class BuyerLandingPageComponent implements OnInit {
     this.item=new Items();
     this.item.itemname=this.searchform.value["itemname"];
     this.service.Search(this.item.itemname).subscribe(res=>{
-     // this.list=res;
       console.log(this.list1);
     }
     ,err=>{
@@ -36,7 +35,6 @@ export class BuyerLandingPageComponent implements OnInit {
     })
   }
   Logout(){
-    //localStorage.clear();
     this.route.navigateByUrl('HOME');
   }
 }

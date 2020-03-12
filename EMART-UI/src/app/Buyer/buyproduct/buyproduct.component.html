@@ -1,49 +1,6 @@
 <div class="register">
     <h3 align="center">Billing Details</h3>
     <div class="form-row">
-        <!-- <form [formGroup]="payform" >
-            <table>
-                <tr>
-                <td><label>Number Of Items</label></td>
-                <td><input type="text"></td>
-            </tr>
-              <tr>
-                <td><label>Date</label></td>
-                <td><input type="date"></td>
-              </tr>
-            <tr>
-                <td><label> PayMent Mode</label></td>
-                <select>
-                    <option value="-1">Choose..</option>
-                    <option value="credit">Credit Card</option>
-                    <option value="debit">Debit Card</option>
-                </select>
-            </tr>
-              <tr>
-                <td><label>Card Holders Name</label></td>
-                <td><input type="text" ></td>
-              </tr>
-              <tr>
-                <td><label>Card Number</label></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><label>CVV</label></td>
-                <td><input type="number" style="width:30%"></td>
-              </tr>
-              <tr>
-                <td><label>ExpiryDate</label></td>
-                <td><input type="date"></td>
-              </tr>
-              
-              <tr>
-                <td><label>Remarks</label></td>
-                <td><input type="text"></td>
-              </tr>
-            </table>
-                <button type="submit" (click)="buyitem()">Purchase</button>
-                <button type="reset">Reset</button>
-        </form> -->
         <form [formGroup]="payform" (ngSubmit)="onSubmit()">    
           <div class="form-group">
             <label>Number Of Items</label>

@@ -78,7 +78,6 @@ list1:Category[]=[];
       this.subcategoryForm.reset();
     }
     Logout(){
-     // localStorage.clear();
       this.route.navigateByUrl('HOME');
     }
 }

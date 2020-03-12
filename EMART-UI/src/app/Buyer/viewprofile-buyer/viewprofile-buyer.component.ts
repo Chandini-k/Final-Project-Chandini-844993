@@ -58,15 +58,12 @@ export class ViewprofileBuyerComponent implements OnInit {
         this.buyer.username=this.form.value["username"],
         this.buyer.email=this.form.value["email"],
         this.buyer.password=this.form.value["password"],
-        //this.buyer.address=this.form.value["address"],
         this.buyer.mobileno=this.form.value["mobileno"],
-//this.buyer.datetime=this.form.value["datetime"],
         this.service.EditProfileBuyer(this.buyer).subscribe(res=>{console.log(this.buyer),alert("updated succesfully"),this.buyerprofile()},err=>{
           console.log(err)
         })
       }
       Logout(){
-        //localStorage.clear();
         this.route.navigateByUrl('HOME');
       }
 }

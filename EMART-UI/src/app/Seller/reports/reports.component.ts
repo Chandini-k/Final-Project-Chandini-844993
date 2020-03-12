@@ -13,7 +13,6 @@ export class ReportsComponent implements OnInit {
   ngOnInit() {
   }
   Logout(){
-    //localStorage.clear();
     this.route.navigateByUrl('HOME');
   }
 }

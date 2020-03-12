@@ -15,10 +15,6 @@ purchasehistory:PurchaseHistory;
 item:Items;
 list1:Items[]=[];
   constructor(private service:BuyerService,private route:Router) {
-  //   this.item=JSON.parse(localStorage.getItem('item'));
-  //   this.list1.push(this.item)
-  // console.log(this.item);
-  // console.log(this.item.id);
   let id=Number(localStorage.getItem('Bid'))
     this.service.ViewOrders(id).subscribe(res=>{
       this.list=res;
@@ -33,7 +29,6 @@ list1:Items[]=[];
 
   }
   Logout(){
-    //localStorage.clear();
     this.route.navigateByUrl('HOME');
   }
 }
