@@ -45,7 +45,7 @@ export class SearchComponent implements OnInit {
   }
   Buy(item:Items){
     console.log(item);
-    localStorage.setItem("item",JSON.stringify(item));
+    localStorage.setItem('item',JSON.stringify(item));
     this.route.navigateByUrl('/BUYER/BUY PRODUCT');
   }
   AddtoCart(item2:Items){

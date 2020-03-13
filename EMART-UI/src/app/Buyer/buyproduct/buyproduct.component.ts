@@ -47,11 +47,11 @@ this.purchasehistory.sid=Number(localStorage.getItem('Sid'));
 this.purchasehistory.noofitems=Number(this.payform.value["noofitems"]);
 this.purchasehistory.itemid=this.item.id;
 this.purchasehistory.transactiontype=this.payform.value["transactiontype"]
-   this.purchasehistory.datetime=this.date;
-   this.purchasehistory.remarks=this.payform.value["remarks"];
-   this.list.push(this.purchasehistory)
-   console.log(this.purchasehistory);
-   this.service.BuyItem(this.purchasehistory).subscribe(res=>{
+this.purchasehistory.datetime=this.date;
+this.purchasehistory.remarks=this.payform.value["remarks"];
+this.list.push(this.purchasehistory);
+console.log(this.purchasehistory)
+this.service.BuyItem(this.purchasehistory).subscribe(res=>{
      console.log("Purchase was Sucessfull");
      alert('Purchase Done Successfully');
     this.Delete();
