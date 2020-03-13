@@ -65,7 +65,7 @@ namespace EmartTestProject
         [Description("Test Category")]
         public void TestGetCategory()
         {
-            var result = _repo.GetCategory(955);
+            var result = _repo.GetCategory(870);
             Assert.NotNull(result);
         }
         [Test]

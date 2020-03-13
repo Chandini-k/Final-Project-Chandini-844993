@@ -22,9 +22,9 @@ namespace EmartTestProject
         {
             _repo.BuyerRegister(new Buyer()
             {
-                Bid = 235,
-                Username = "chandinichandu",
-                Password = "chandini@",
+                Bid = 2356,
+                Username = "chand",
+                Password = "chand@",
                 Email = "chandini@gmail.com",
                 Mobileno = "9456783245",
                 Datetime = System.DateTime.Now
@@ -38,19 +38,19 @@ namespace EmartTestProject
         {
             _repo.SellerRegister(new Seller()
             {
-                Sid = 2354,
-                Username = "chanduchandini",
-                Password = "chandini@",
+                Sid = 345,
+                Username = "chandu",
+                Password = "chandu@",
                 Companyname="cognizant",
                 Gst=32,
                 Aboutcmpy="OK",
-                Address="Chennai",
+                Address="chennai",
                 Website="www.cognizant.com",
-                Email = "chandini@gmail.com",
-                Mobileno = "9456783245"
+                Email = "chandus@gmail.com",
+                Mobileno = "9456789845"
                 
             });
-            var result = _repo.ValidateSeller("chanduchandini", "chandini@");
+            var result = _repo.ValidateSeller("chandu", "chandu@");
             Assert.NotNull(result);
         }
         [Test]

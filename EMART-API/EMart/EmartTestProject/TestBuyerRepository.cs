@@ -36,11 +36,11 @@ namespace EmartTestProject
         {
             _repo.BuyItem(new PurchaseHistory()
             {
-                Id = 452,
+                Id = 537,
                 Bid = 1234,
                 Sid = 2,
                 Transactiontype = "Credit",
-                Itemid = 3669,
+                Itemid = 7956,
                 Noofitems = 1,
                 Datetime = System.DateTime.Now,
                 Remarks = "Good",

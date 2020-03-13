@@ -22,9 +22,9 @@ namespace EmartTestProject
         {
             _repo.AddItem(new Items()
             {
-                Id = 4584,
-                Itemname = "abcd",
-                Categoryid = 142,
+                Id = 547,
+                Itemname = "efgh",
+                Categoryid = 870,
                 Subcatergoryid = 145,
                 Price = "45362",
                 Description = "sdsf",
@@ -40,7 +40,7 @@ namespace EmartTestProject
         [Description("Test GetById")]
         public void TestGetById()
         {
-            var result = _repo.GetById(4584);
+            var result = _repo.GetById(547);
             Assert.IsNotNull(result);
         }
         [Test]
@@ -54,18 +54,18 @@ namespace EmartTestProject
         [Description("Test UpdateITem")]
         public void TestUpdateItem()
         {
-            Items items = _repo.GetById(4584);
+            Items items = _repo.GetById(547);
             items.Itemname = "szdfgvs";
             _repo.UpdateItem(items);
-            Items items1 = _repo.GetById(4584);
+            Items items1 = _repo.GetById(547);
             Assert.AreSame(items, items1);
         }
         [Test]
         [Description("Test DeleteItem")]
         public void TestDeleteItem()
         {
-            _repo.DeleteItem(4584);
-            var result = _repo.GetById(4584);
+            _repo.DeleteItem(547);
+            var result = _repo.GetById(547);
             Assert.Null(result);
         }
         [Test]
