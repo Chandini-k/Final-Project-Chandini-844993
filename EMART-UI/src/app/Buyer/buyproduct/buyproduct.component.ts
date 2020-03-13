@@ -19,6 +19,7 @@ payform:FormGroup
 list:PurchaseHistory[]=[];
 list1:Items[]=[];
 item:Items;
+date=new Date();
   constructor(private formbuilder:FormBuilder,private service:BuyerService,private route:Router) { 
     this.item=JSON.parse(localStorage.getItem('item'));
   console.log(this.item);
@@ -46,7 +47,7 @@ this.purchasehistory.sid=Number(localStorage.getItem('Sid'));
 this.purchasehistory.noofitems=Number(this.payform.value["noofitems"]);
 this.purchasehistory.itemid=this.item.id;
 this.purchasehistory.transactiontype=this.payform.value["transactiontype"]
-   this.purchasehistory.datetime=this.payform.value["datetime"];
+   this.purchasehistory.datetime=this.date;
    this.purchasehistory.remarks=this.payform.value["remarks"];
    this.list.push(this.purchasehistory)
    console.log(this.purchasehistory);
