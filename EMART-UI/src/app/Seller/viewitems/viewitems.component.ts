@@ -103,6 +103,7 @@ export class ViewitemsComponent implements OnInit {
       })
     }
     Logout(){
+      localStorage.clear();
       this.route.navigateByUrl('HOME');
     }
 }

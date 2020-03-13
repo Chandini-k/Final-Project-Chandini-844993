@@ -64,6 +64,7 @@ export class ViewprofileBuyerComponent implements OnInit {
         })
       }
       Logout(){
+        localStorage.clear();
         this.route.navigateByUrl('HOME');
       }
 }

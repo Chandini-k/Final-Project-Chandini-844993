@@ -37,6 +37,7 @@ export class ViewcartComponent implements OnInit {
     })
   }
   Logout(){
+    localStorage.clear();
     this.route.navigateByUrl('HOME');
   }
 }

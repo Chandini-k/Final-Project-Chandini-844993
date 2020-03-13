@@ -8,11 +8,12 @@ import { Router } from '@angular/router';
 })
 export class AdminLandingPageComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  constructor(private route:Router) {}
 
   ngOnInit() {
   }
   Logout(){
+    localStorage.clear();
     this.route.navigateByUrl('HOME');
   }
 }

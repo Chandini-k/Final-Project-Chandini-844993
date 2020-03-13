@@ -101,6 +101,7 @@ export class AdditemsComponent implements OnInit {
       this.img= event.target.files[0].name;
     }
     Logout(){
+      localStorage.clear();
       this.route.navigateByUrl('HOME');
     }
   }

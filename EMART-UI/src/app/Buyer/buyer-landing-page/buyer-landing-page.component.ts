@@ -10,31 +10,19 @@ import { BuyerService } from 'src/app/services/buyer.service';
   styleUrls: ['./buyer-landing-page.component.css']
 })
 export class BuyerLandingPageComponent implements OnInit {
-  item:Items;
-  list:Items[];
-  list1:Items[];
-  submitted=false;
-  searchform:FormGroup;
-    constructor(private service:BuyerService,
-      private formbuilder:FormBuilder,private route:Router) { }
+  bid:number;
+    constructor(private service:BuyerService,private formbuilder:FormBuilder,private route:Router) { 
+        if(localStorage.getItem('Bid')==null)
+    {
+      this.route.navigateByUrl('HOME')
+    }
+    this.bid=JSON.parse(localStorage.getItem('Bid'))
+   }
   
     ngOnInit() {
-      this.searchform=this.formbuilder.group({
-        itemname:['']
-      })
     }  
-  Search()
-  {
-    this.item=new Items();
-    this.item.itemname=this.searchform.value["itemname"];
-    this.service.Search(this.item.itemname).subscribe(res=>{
-      console.log(this.list1);
-    }
-    ,err=>{
-      console.log(err);
-    })
-  }
   Logout(){
+    localStorage.clear();
     this.route.navigateByUrl('HOME');
   }
 }

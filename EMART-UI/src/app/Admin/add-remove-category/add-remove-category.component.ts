@@ -68,6 +68,7 @@ export class AddRemoveCategoryComponent implements OnInit {
       this.categoryForm.reset();
     }
     Logout(){
+      localStorage.clear();
       this.route.navigateByUrl('HOME');
     }
 }
