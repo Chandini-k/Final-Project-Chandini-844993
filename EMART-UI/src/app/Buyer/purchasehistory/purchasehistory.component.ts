@@ -29,7 +29,6 @@ list1:Items[]=[];
 
   }
   Logout(){
-    localStorage.clear();
     this.route.navigateByUrl('HOME');
   }
 }

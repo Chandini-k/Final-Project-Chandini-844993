@@ -25,7 +25,7 @@ cname varchar(20) not null,
 cdetails varchar(20))
 insert into Category values(1,'fashion','men fashion');
 select * from Category
-delete Category where cid=1235
+delete Category where cid=955
 create table SubCategory(subid int primary key,
 subname varchar(20) not null,
 cid int foreign key references Category(cid),
@@ -34,18 +34,18 @@ gst int)
 alter table SubCategory add cid int foreign key references Category(cid)
 alter table SubCategory add cname varchar(20)
 insert into SubCategory values(1,'Men Shirts',1,'men fashion',12);
-insert into SubCategory values(143,'Mobiles',142,'ele',34,'electronics');
-insert into SubCategory values(144,'Laptops',142,'ele',54,'electronics');
-insert into SubCategory values(145,'Camera',142,'ele',38,'electronics');
-insert into SubCategory values(152,'Mens',256,'fas',341,'fashion');
-insert into SubCategory values(153,'Girls',256,'fas',545,'fashion');
-insert into SubCategory values(154,'Kids',256,'fas',382,'fashion');
-insert into SubCategory values(163,'Teddy',955,'kid',341,'toys');
-insert into SubCategory values(162,'Barbie',955,'kid',545,'toys');
-insert into SubCategory values(167,'Doll',955,'kid',382,'toys');
+insert into SubCategory values(143,'Mobiles',870,'ele',34,'electronics');
+insert into SubCategory values(144,'Laptops',870,'ele',54,'electronics');
+insert into SubCategory values(145,'Camera',870,'ele',38,'electronics');
+insert into SubCategory values(152,'Mens',238,'fas',341,'fashion');
+insert into SubCategory values(153,'Girls',238,'fas',545,'fashion');
+insert into SubCategory values(154,'Kids',238,'fas',382,'fashion');
+insert into SubCategory values(163,'Teddy',301,'kid',341,'toys');
+insert into SubCategory values(162,'Barbie',301,'kid',545,'toys');
+insert into SubCategory values(167,'Doll',301,'kid',382,'toys');
 
 select * from SubCategory
-delete SubCategory where subid=728
+delete SubCategory where subid=307
 alter table SubCategory drop column cid
 create table Items(id int primary key,
 categoryid int foreign key references Category(cid),
@@ -70,7 +70,7 @@ noofitems int,
 datetime date not null,
 remarks varchar(20))
 select * from Purchase_history
-delete Purchase_history where id=969
+delete Purchase_history where id=295
 ALTER TABLE Purchase_history ADD transactionstatus varchar(20)
 create table Users(uname varchar(20) not null,
 pwd varchar(20) not null)

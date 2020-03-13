@@ -13,12 +13,12 @@ export class ViewitemsComponent implements OnInit {
   itemForm:FormGroup;
   submitted=false;
   list:Items[];
-  item:Items;
+  item2:Items;
   seller:Seller;
   list1:Items;
   item1:Items
   constructor(private builder:FormBuilder,private service:SellerService,private route:Router) {
-    this.item=JSON.parse(localStorage.getItem('item'));
+    this.item2=JSON.parse(localStorage.getItem('item'));
     //this.list1.push(this.item)
   //console.log(this.item);
   //console.log(this.item.id);
@@ -57,8 +57,8 @@ export class ViewitemsComponent implements OnInit {
   {
   this.item1=new Items();
   this.item1.id=Number(this.itemForm.value["id"]),
-  this.item1.categoryid=this.item.categoryid,
-  this.item1.subcatergoryid=this.item.subcatergoryid,
+  this.item1.categoryid=this.item2.categoryid,
+  this.item1.subcatergoryid=this.item2.subcatergoryid,
   this.item1.itemname=this.itemForm.value["itemname"],
   this.item1.price=this.itemForm.value["price"],
   this.item1.stockno=Number(this.itemForm.value["stockno"]),

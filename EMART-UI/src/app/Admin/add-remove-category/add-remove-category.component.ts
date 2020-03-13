@@ -21,6 +21,7 @@ export class AddRemoveCategoryComponent implements OnInit {
       cname:['',Validators.required],
       cdetails:['',Validators.required]
     });
+    localStorage.setItem("category",JSON.stringify(this.category));
   }
   Category(){
     this.service.GetAllCategories().subscribe(res=>{
@@ -68,7 +69,6 @@ export class AddRemoveCategoryComponent implements OnInit {
       this.categoryForm.reset();
     }
     Logout(){
-      localStorage.clear();
       this.route.navigateByUrl('HOME');
     }
 }

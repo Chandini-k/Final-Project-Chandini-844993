@@ -12,17 +12,11 @@ import { BuyerService } from 'src/app/services/buyer.service';
 export class BuyerLandingPageComponent implements OnInit {
   bid:number;
     constructor(private service:BuyerService,private formbuilder:FormBuilder,private route:Router) { 
-        if(localStorage.getItem('Bid')==null)
-    {
-      this.route.navigateByUrl('HOME')
-    }
-    this.bid=JSON.parse(localStorage.getItem('Bid'))
    }
   
     ngOnInit() {
     }  
   Logout(){
-    localStorage.clear();
     this.route.navigateByUrl('HOME');
   }
 }

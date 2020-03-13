@@ -18,7 +18,7 @@ subcategoryForm:FormGroup;
 category:Category;
 list1:Category[]=[];
   constructor(private frombuilder:FormBuilder,private service:AdminService,private route:Router) {
-    
+    this.category=JSON.parse(localStorage.getItem('category'));
    }
 
 
@@ -50,7 +50,7 @@ list1:Category[]=[];
       this.subcategory.subname=this.subcategoryForm.value["subname"];
       this.subcategory.cname=this.subcategoryForm.value["cname"];
       this.subcategory.sdetails=this.subcategoryForm.value["sdetails"];
-      this.subcategory.cid=this.subcategoryForm.value["cid"];
+      this.subcategory.cid=this.category.cid;
       this.subcategory.gst=Number(this.subcategoryForm.value["gst"]);
       this.list.push(this.subcategory)
       console.log(this.subcategory);
@@ -78,7 +78,6 @@ list1:Category[]=[];
       this.subcategoryForm.reset();
     }
     Logout(){
-      localStorage.clear();
       this.route.navigateByUrl('HOME');
     }
 }
