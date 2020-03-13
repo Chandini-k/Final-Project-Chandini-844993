@@ -9,17 +9,11 @@ import { Router } from '@angular/router';
 export class SellerLandingPageComponent implements OnInit {
 sid:number
   constructor(private route:Router) {
-    if(localStorage.getItem('Sid')==null)
-    {
-      this.route.navigateByUrl('HOME')
-    }
-    this.sid=JSON.parse(localStorage.getItem('Sid'))
    }
 
   ngOnInit() {
   }
   Logout(){
-    localStorage.clear();
     this.route.navigateByUrl('HOME');
   }
 }

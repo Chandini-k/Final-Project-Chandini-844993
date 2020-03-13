@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PurchaseHistory } from 'src/app/Models/purchase-history';
 import { Buyer } from 'src/app/Models/buyer';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup} from '@angular/forms';
 import { Items } from 'src/app/Models/items';
 import { Router } from '@angular/router';
 import { BuyerService } from 'src/app/services/buyer.service';

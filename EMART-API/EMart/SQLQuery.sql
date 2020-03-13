@@ -58,7 +58,7 @@ remarks varchar(20))
 alter table Items add categoryid int foreign key references Category(cid)
 alter table Items add subcategoryid int foreign key references SubCategory(subid)
 select * from Items
-delete Items where id=746;
+delete Items where id=435;
 alter table Items add imagename varchar(50)
 alter table Items add sid int
 create table Purchase_history(id int primary key,
@@ -70,7 +70,7 @@ noofitems int,
 datetime date not null,
 remarks varchar(20))
 select * from Purchase_history
-delete Purchase_history where id=259
+delete Purchase_history where id=435
 ALTER TABLE Purchase_history ADD transactionstatus varchar(20)
 create table Users(uname varchar(20) not null,
 pwd varchar(20) not null)
