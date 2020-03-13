@@ -70,7 +70,7 @@ noofitems int,
 datetime date not null,
 remarks varchar(20))
 select * from Purchase_history
-delete Purchase_history where id=435
+delete Purchase_history where id=969
 ALTER TABLE Purchase_history ADD transactionstatus varchar(20)
 create table Users(uname varchar(20) not null,
 pwd varchar(20) not null)
