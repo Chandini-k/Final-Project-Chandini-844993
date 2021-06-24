@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EMart.AdminService.Models;
+using EMart.AdminService.Entity;
 
 namespace EMart.AdminService.Repositories
 {
     public class AdminRepository : IAdminRepository
     {
-        private readonly EMARTDBContext _context;
-        public AdminRepository(EMARTDBContext context)
+        private readonly EmartContext _context;
+        public AdminRepository(EmartContext context)
         {
             _context = context;
         }

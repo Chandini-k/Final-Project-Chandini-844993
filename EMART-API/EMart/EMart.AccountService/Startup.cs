@@ -10,12 +10,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using EMart.AccountService.Controllers;
-using EMart.AccountService.Models;
+using EMart.AccountService.Entity;
 using EMart.AccountService.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using Microsoft.OpenApi.Models;
 
 namespace EMart.AccountService
 {
@@ -32,8 +33,17 @@ namespace EMart.AccountService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<EMARTDBContext>();
+            services.AddDbContext<EmartContext>();
             services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "EMART APP",
+                    Description = "EMART API",
+                });
+            });
             services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options =>
@@ -75,6 +85,11 @@ namespace EMart.AccountService
            // app.UseAuthentication();
             app.UseAuthorization();
             app.UseCors("AllowOrigin");//Enable Cors
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Emart APP");
+            });
 
             app.UseEndpoints(endpoints =>
             {

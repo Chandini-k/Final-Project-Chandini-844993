@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using EMart.BuyerService.Models;
+using EMart.BuyerService.Entity;
 using EMart.BuyerService.Repositories;
 
 namespace EMart.BuyerService.Controllers

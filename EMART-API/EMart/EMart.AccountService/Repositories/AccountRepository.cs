@@ -1,4 +1,4 @@
-﻿using EMart.AccountService.Models;
+﻿using EMart.AccountService.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +8,8 @@ namespace EMart.AccountService.Repositories
 {
     public class AccountRepository : IAccountRepository
     {
-        private readonly EMARTDBContext _context;
-        public AccountRepository(EMARTDBContext context)
+        private readonly EmartContext _context;
+        public AccountRepository(EmartContext context)
         {
             _context = context;
         }

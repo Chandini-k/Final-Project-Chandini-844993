@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EMart.BuyerService.Models;
+using EMart.BuyerService.Entity;
 
 namespace EMart.BuyerService.Repositories
 {

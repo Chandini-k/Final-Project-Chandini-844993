@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EMart.AdminService.Models;
+using EMart.AdminService.Entity;
 
 namespace EMart.AdminService.Repositories
 {

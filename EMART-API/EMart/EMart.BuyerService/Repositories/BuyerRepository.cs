@@ -1,4 +1,4 @@
-﻿using EMart.BuyerService.Models;
+﻿using EMart.BuyerService.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +8,8 @@ namespace EMart.BuyerService.Repositories
 {
     public class BuyerRepository : IBuyerRepository
     {
-        private readonly EMARTDBContext _context;
-        public BuyerRepository(EMARTDBContext context)
+        private readonly EmartContext _context;
+        public BuyerRepository(EmartContext context)
         {
             _context = context;
         }

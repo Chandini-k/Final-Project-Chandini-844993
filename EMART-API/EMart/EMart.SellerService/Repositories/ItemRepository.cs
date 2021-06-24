@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EMart.SellerService.Models;
+using EMart.SellerService.Entity;
 
 namespace EMart.SellerService.Repositories
 {
     public class ItemRepository:IItemRepository
     {
-        private readonly EMARTDBContext _context;
-        public ItemRepository(EMARTDBContext context)
+        private readonly EmartContext _context;
+        public ItemRepository(EmartContext context)
         {
             _context = context;
         }

@@ -9,8 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using EMart.BuyerService.Models;
+using EMart.BuyerService.Entity;
 using EMart.BuyerService.Repositories;
+using Microsoft.OpenApi.Models;
 
 namespace EMart.BuyerService
 {
@@ -26,8 +27,17 @@ namespace EMart.BuyerService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<EMARTDBContext>();
+            services.AddDbContext<EmartContext>();
             services.AddTransient<IBuyerRepository, BuyerRepository>();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "EMART APP",
+                    Description = "EMART API",
+                });
+            });
             services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options =>
@@ -52,6 +62,12 @@ namespace EMart.BuyerService
 
             app.UseAuthorization();
             app.UseCors("AllowOrigin");//Enable Cors
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Emart APP");
+            });
+
 
             app.UseEndpoints(endpoints =>
             {

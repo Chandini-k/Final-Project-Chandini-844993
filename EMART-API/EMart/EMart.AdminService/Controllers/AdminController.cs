@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using EMart.AdminService.Models;
+using EMart.AdminService.Entity;
 using EMart.AdminService.Repositories;
 
 namespace EMart.AdminService.Controllers

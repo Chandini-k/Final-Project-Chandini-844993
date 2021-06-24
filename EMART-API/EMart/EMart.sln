@@ -9,11 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMart.SellerService", "EMar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMart.AdminService", "EMart.AdminService\EMart.AdminService.csproj", "{963A6519-2FC0-4B73-BC28-CB0713140B19}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMart.GateWay", "EMart.GateWay\EMart.GateWay.csproj", "{3441D311-C532-4B2D-8428-BE72D899946C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMart.AccountService", "EMart.AccountService\EMart.AccountService.csproj", "{F7A0C914-14A0-457B-BCE5-97BE1999B037}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmartTestProject", "EmartTestProject\EmartTestProject.csproj", "{3F0EFE6E-D5A2-4E07-9D09-154E3894AEF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +29,10 @@ Global
 		{963A6519-2FC0-4B73-BC28-CB0713140B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{963A6519-2FC0-4B73-BC28-CB0713140B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{963A6519-2FC0-4B73-BC28-CB0713140B19}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3441D311-C532-4B2D-8428-BE72D899946C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3441D311-C532-4B2D-8428-BE72D899946C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3441D311-C532-4B2D-8428-BE72D899946C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3441D311-C532-4B2D-8428-BE72D899946C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F7A0C914-14A0-457B-BCE5-97BE1999B037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F7A0C914-14A0-457B-BCE5-97BE1999B037}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7A0C914-14A0-457B-BCE5-97BE1999B037}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7A0C914-14A0-457B-BCE5-97BE1999B037}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F0EFE6E-D5A2-4E07-9D09-154E3894AEF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F0EFE6E-D5A2-4E07-9D09-154E3894AEF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F0EFE6E-D5A2-4E07-9D09-154E3894AEF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F0EFE6E-D5A2-4E07-9D09-154E3894AEF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

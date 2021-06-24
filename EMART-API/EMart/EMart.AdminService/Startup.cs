@@ -10,7 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using EMart.AdminService.Repositories;
-using EMart.AdminService.Models;
+using EMart.AdminService.Entity;
+using Microsoft.OpenApi.Models;
 
 namespace EMart.AdminService
 {
@@ -26,8 +27,17 @@ namespace EMart.AdminService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<EMARTDBContext>();
+            services.AddDbContext<EmartContext>();
             services.AddTransient<IAdminRepository, AdminRepository>();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "EMART APP",
+                    Description = "EMART API",
+                });
+            });
             services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options =>
@@ -52,6 +62,12 @@ namespace EMart.AdminService
 
             app.UseAuthorization();
             app.UseCors("AllowOrigin");//Enable Cors
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Emart APP");
+            });
+
 
             app.UseEndpoints(endpoints =>
             {

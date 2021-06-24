@@ -1,4 +1,4 @@
-﻿using EMart.SellerService.Models;
+﻿using EMart.SellerService.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +8,8 @@ namespace EMart.SellerService.Repositories
 {
     public class SellerRepository : ISellerRepository
     {
-        private readonly EMARTDBContext _context;
-        public SellerRepository(EMARTDBContext context)
+        private readonly EmartContext _context;
+        public SellerRepository(EmartContext context)
         {
             _context = context;
         }

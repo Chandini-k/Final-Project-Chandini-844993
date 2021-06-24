@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\FINAL-PROJECT-CHANDINI-844993\\EMART-API\\EMart\\EMart.GateWay\\EMart.GateWay.csproj": {}
+    "C:\\Users\\User\\source\\Final-Project-Chandini-844993\\EMART-API\\EMart\\EMart.GateWay\\EMart.GateWay.csproj": {}
   },
   "projects": {
-    "C:\\FINAL-PROJECT-CHANDINI-844993\\EMART-API\\EMart\\EMart.GateWay\\EMart.GateWay.csproj": {
+    "C:\\Users\\User\\source\\Final-Project-Chandini-844993\\EMART-API\\EMart\\EMart.GateWay\\EMart.GateWay.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\FINAL-PROJECT-CHANDINI-844993\\EMART-API\\EMart\\EMart.GateWay\\EMart.GateWay.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\Final-Project-Chandini-844993\\EMART-API\\EMart\\EMart.GateWay\\EMart.GateWay.csproj",
         "projectName": "EMart.GateWay",
-        "projectPath": "C:\\FINAL-PROJECT-CHANDINI-844993\\EMART-API\\EMart\\EMart.GateWay\\EMart.GateWay.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\FINAL-PROJECT-CHANDINI-844993\\EMART-API\\EMart\\EMart.GateWay\\obj\\",
+        "projectPath": "C:\\Users\\User\\source\\Final-Project-Chandini-844993\\EMART-API\\EMart\\EMart.GateWay\\EMart.GateWay.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\Final-Project-Chandini-844993\\EMART-API\\EMart\\EMart.GateWay\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -26,6 +30,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -77,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
